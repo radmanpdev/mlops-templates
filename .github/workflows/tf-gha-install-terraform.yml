@@ -27,6 +27,10 @@ on:
         description: 'Enviroment of the AML workspace'
         type: string
         required: true
+      vnet_address_space:
+        description: 'Virtual network address space'
+        type: string
+        required: true
       enable_aml_computecluster:
         description: 'Boolean to decide whether to deploy an AML compute cluster or not'
         type: boolean
