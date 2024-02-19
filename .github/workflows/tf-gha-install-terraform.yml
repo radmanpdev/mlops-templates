@@ -27,10 +27,10 @@ on:
         description: 'Enviroment of the AML workspace'
         type: string
         required: true
-      vnet_address_space:
-        description: 'Virtual network address space'
-        type: string
-        required: true
+      # vnet_cidr:
+      #   description: 'Virtual network address space'
+      #   type: string
+      #   required: true
       enable_aml_computecluster:
         description: 'Boolean to decide whether to deploy an AML compute cluster or not'
         type: boolean
@@ -174,7 +174,7 @@ jobs:
         ARM_SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
         ARM_TENANT_ID: ${{ secrets.tenantId }}     
     - name: Terraform Plan
-      run: terraform -chdir=${{ inputs.terraform_workingdir }} plan -out=plan.tfplan -input=false -var "location=${{ inputs.terraform_plan_location }}" -var "prefix=${{ inputs.namespace }}" -var "postfix=${{ inputs.postfix }}" -var "environment=${{ inputs.environment }}" -var "vnet_address_space=${{ inputs.vnet_address_space }}" 
+      run: terraform -chdir=${{ inputs.terraform_workingdir }} plan -out=plan.tfplan -input=false -var "location=${{ inputs.terraform_plan_location }}" -var "prefix=${{ inputs.namespace }}" -var "postfix=${{ inputs.postfix }}" -var "environment=${{ inputs.environment }}"
         -var "enable_aml_computecluster=${{ inputs.enable_aml_computecluster }}" -var "enable_monitoring=${{ inputs.enable_monitoring }}" -var "client_secret=${{ env.ARM_CLIENT_SECRET }}"
       env:
         ARM_CLIENT_ID: ${{ secrets.clientId }}
