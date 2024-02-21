@@ -201,4 +201,5 @@ jobs:
         ARM_CLIENT_ID: ${{ secrets.clientId }}
         ARM_CLIENT_SECRET: ${{ secrets.clientSecret }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
-        ARM_TENANT_ID: ${{ secrets.tenantId }}     
+        ARM_TENANT_ID: ${{ secrets.tenantId }}
+        AZURE_JUMPHOST_PASSWORD: ${{ secrets.jumphostPassword }}
