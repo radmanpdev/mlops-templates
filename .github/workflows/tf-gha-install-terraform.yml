@@ -85,7 +85,9 @@ on:
       tenantId:
         required: true
       subscriptionId:
-        required: true        
+        required: true
+      jumphostPassword:        
+        required: true
 jobs:
   create-tfstate-resources:
     name: Create Resources for Terraform State
